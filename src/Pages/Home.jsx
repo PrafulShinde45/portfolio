@@ -93,7 +93,7 @@ const SocialLink = memo(({ icon: Icon, link }) => (
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ["Network & Telecom Student", "Tech Enthusiast"];
+const WORDS = ["Computer Science Student", "Tech Enthusiast"];
 const TECH_STACK = ["React", "Javascript", "Node.js", "Tailwind"];
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/PrafulShinde45" },
@@ -210,8 +210,8 @@ const Home = () => {
                   data-aos="fade-up"
                   data-aos-delay="1000"
                 >
-                  Full Stack Developer skilled in MERN stack and AWS Cloud, 
-                  specializing in backend development with Node.js.
+                  Full Stack Developer skilled in MERN stack, Next.js, and AWS Cloud,
+                  with expertise in Node.js, TypeScript, Firebase, and SQL databases.
                 </p>
 
                 {/* Tech Stack */}

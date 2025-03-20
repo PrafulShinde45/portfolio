@@ -13,7 +13,7 @@ const socialLinks = [
     displayName: "Let's Connect",
     subText: "on LinkedIn",
     icon: Linkedin,
-    url: "https://www.linkedin.com/",
+    url: "https://www.linkedin.com/in/praful-shinde/",
     color: "#0A66C2",
     gradient: "from-[#0A66C2] to-[#0077B5]",
     isPrimary: true
@@ -21,7 +21,7 @@ const socialLinks = [
   {
     name: "Instagram",
     displayName: "Instagram",
-    subText: "@ekizr_",
+    subText: "@praful",
     icon: Instagram,
     url: "https://www.instagram.com/",
     color: "#E4405F",
@@ -30,7 +30,7 @@ const socialLinks = [
   {
     name: "YouTube",
     displayName: "Youtube",
-    subText: "@eki zulfar",
+    subText: "@praful",
     icon: Youtube,
     // url: "https://www.youtube.com/@",
     color: "#FF0000",
@@ -39,16 +39,16 @@ const socialLinks = [
   {
     name: "GitHub",
     displayName: "Github",
-    subText: "@EkiZR",
+    subText: "@praful",
     icon: Github,
-    // url: "",
+    url: "https://github.com/PrafulShinde45",
     color: "#ffffff",
     gradient: "from-[#333] to-[#24292e]"
   },
   {
     name: "TikTok",
     displayName: "Tiktok",
-    subText: "@eki_zulfar",
+    subText: "@praful45",
     icon: ({ className, ...props }) => (
      <svg width="24px" height="24px" viewBox="0 0 45 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Tiktok</title>

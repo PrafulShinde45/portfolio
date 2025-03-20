@@ -1,6 +1,5 @@
 {
   "name": "portofolio-v5",
-  "homepage": "https://PrafulShinde45.github.io/portfolio/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,9 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy":"gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -31,6 +28,7 @@
     "dialog": "^0.3.1",
     "firebase": "^11.0.1",
     "framer-motion": "^11.15.0",
+    "gh-pages": "^6.3.0",
     "gsap": "^3.12.5",
     "headlessui": "^0.0.0",
     "lucide-react": "^0.454.0",
@@ -50,7 +48,7 @@
     "@eslint/js": "^9.13.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react": "^4.3.3",
+    "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.13.0",
     "eslint-plugin-react": "^7.37.2",
