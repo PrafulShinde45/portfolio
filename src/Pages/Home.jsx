@@ -173,8 +173,11 @@ const Home = () => {
     }`,
   };
 
+  
   return (
-    <div className="min-h-screen bg-[#030014] overflow-hidden" id="Home">
+    <div className="min-h-screen w-full bg-[#030014] overflow-hidden" id="Home">
+      <div className="translate-x-[5%]">
+    
       <div
         className={`relative z-10 transition-all duration-1000 ${
           isLoaded ? "opacity-100" : "opacity-0"
@@ -210,8 +213,8 @@ const Home = () => {
                   data-aos="fade-up"
                   data-aos-delay="1000"
                 >
-                  Full Stack Developer skilled in MERN stack, Next.js, and AWS Cloud,
-                  with expertise in Node.js, TypeScript, Firebase, and SQL databases.
+                  Full Stack Developer skilled in React.js, Node.js, Express.js, MongoDB, Next.js,  JavaScript, TypeScript, and
+                  AWS, with strong foundation in Java, Spring Boot, Firebase, and SQL databases.
                 </p>
 
                 {/* Tech Stack */}
@@ -291,6 +294,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

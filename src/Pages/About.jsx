@@ -235,7 +235,7 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-              Full Stack Developer with expertise in the MERN stack and AWS Cloud. Skilled in building scalable backend systems with Node.js and Express.js. Proficient in MongoDB and developing responsive front-end applications using React.js.
+              Full Stack Developer with expertise in React.js, Node.js, Express.js, MongoDB, Next.js, JavaScript, TypeScript, and AWS Cloud. Skilled in building scalable backend systems with Node.js and Express.js and proficient in MongoDB. Experienced in developing responsive front-end applications using React.js and having a strong foundation in Java, Spring Boot, Firebase, and SQL databases.
             </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
