@@ -125,16 +125,10 @@ const AboutPage = () => {
     const updateCounts = () => {
       const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
       const storedCertificates = JSON.parse(localStorage.getItem("certificates") || "[]");
-      const startDate = new Date("2021-11-06");
-      const today = new Date();
-      const experience =
-        today.getFullYear() -
-        startDate.getFullYear() -
-        (today < new Date(today.getFullYear(), startDate.getMonth(), startDate.getDate()) ? 1 : 0);
-
+      // Set years of experience manually to 0.5 (6 months)
       setTotalProjects(storedProjects.length);
       setTotalCertificates(storedCertificates.length);
-      setYearExperience(experience);
+      setYearExperience(0.5);
     };
 
     updateCounts();

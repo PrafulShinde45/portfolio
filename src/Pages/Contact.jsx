@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Send, User, Mail, Phone } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import SocialLinks from "../components/SocialLinks";
 import Swal from "sweetalert2";
 import AOS from "aos";
@@ -13,6 +14,7 @@ const ContactPage = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     AOS.init({ once: false });
@@ -40,20 +42,34 @@ const ContactPage = () => {
     });
 
     try {
-      await e.target.submit();
-      Swal.fire({
-        title: "Success!",
-        text: "Your message has been sent successfully!",
-        icon: "success",
-        confirmButtonColor: "#6366f1",
-        timer: 2000,
-        timerProgressBar: true,
+      const formDataToSend = new FormData(e.target);
+      
+      const response = await fetch('https://formsubmit.co/shindepraful731@gmail.com', {
+        method: 'POST',
+        body: formDataToSend,
       });
-      setFormData({ name: "", email: "", phone: "", message: "" });
+
+      if (response.ok) {
+        Swal.fire({
+          title: "Success!",
+          text: "Your message has been sent successfully! Redirecting to thank you page...",
+          icon: "success",
+          confirmButtonColor: "#6366f1",
+          timer: 2000,
+          timerProgressBar: true,
+        }).then(() => {
+          navigate('/thank-you');
+        });
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        e.target.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
     } catch (error) {
+      console.error('Form submission error:', error);
       Swal.fire({
         title: "Error!",
-        text: "Something went wrong. Please try again later.",
+        text: "Something went wrong. Please try again later or contact me directly.",
         icon: "error",
         confirmButtonColor: "#6366f1",
       });
@@ -104,6 +120,7 @@ const ContactPage = () => {
             >
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_subject" value="New Contact Message from Portfolio" />
 
               {/* Name Field */}
               <div className="relative">
@@ -113,6 +130,21 @@ const ContactPage = () => {
                   name="name"
                   placeholder="Your Name"
                   value={formData.name}
+                  onChange={handleChange}
+                  disabled={isSubmitting}
+                  className="w-full p-4 pl-12 bg-white/10 rounded-xl border border-white/20 placeholder-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-[#6366f1]/30 transition-all duration-300 hover:border-[#6366f1]/30 disabled:opacity-50"
+                  required
+                />
+              </div>
+
+              {/* Email Field */}
+              <div className="relative">
+                <Mail className="absolute left-4 top-4 w-5 h-5 text-gray-400" />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  value={formData.email}
                   onChange={handleChange}
                   disabled={isSubmitting}
                   className="w-full p-4 pl-12 bg-white/10 rounded-xl border border-white/20 placeholder-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-[#6366f1]/30 transition-all duration-300 hover:border-[#6366f1]/30 disabled:opacity-50"
