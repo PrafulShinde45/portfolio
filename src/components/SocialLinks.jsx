@@ -12,15 +12,6 @@ const socialLinks = [
     gradient: "from-[#0A66C2] to-[#0077B5]",
   },
   {
-    name: "Instagram",
-    displayName: "Instagram",
-    subText: "on Instagram",
-    icon: Instagram,
-    url: "https://www.instagram.com/",
-    color: "#E4405F",
-    gradient: "from-[#833AB4] via-[#E4405F] to-[#FCAF45]",
-  },
-  {
     name: "GitHub",
     displayName: "Github",
     subText: "on GitHub",
@@ -28,6 +19,24 @@ const socialLinks = [
     url: "https://github.com/PrafulShinde45",
     color: "#ffffff",
     gradient: "from-[#333] to-[#24292e]",
+  },
+  {
+    name: "LeetCode",
+    displayName: "LeetCode",
+    subText: "on LeetCode",
+    icon: ExternalLink,
+    url: "https://leetcode.com/PrafulShinde45/",
+    color: "#FFA116",
+    gradient: "from-[#FFA116] to-[#FF8C00]",
+  },
+  {
+    name: "Instagram",
+    displayName: "Instagram",
+    subText: "on Instagram",
+    icon: Instagram,
+    url: "https://www.instagram.com/",
+    color: "#E4405F",
+    gradient: "from-[#833AB4] via-[#E4405F] to-[#FCAF45]",
   },
 ];
 

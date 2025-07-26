@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { projects, certificates } from '../data';
 
 // Memoized Components
 const Header = memo(() => (
@@ -122,23 +123,9 @@ const AboutPage = () => {
 
   // Update counts on mount and when localStorage changes
   useEffect(() => {
-    const updateCounts = () => {
-      const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
-      const storedCertificates = JSON.parse(localStorage.getItem("certificates") || "[]");
-      // Set years of experience manually to 0.5 (6 months)
-      setTotalProjects(storedProjects.length);
-      setTotalCertificates(storedCertificates.length);
-      setYearExperience(0.5);
-    };
-
-    updateCounts();
-
-    // Listen for changes in localStorage from other tabs/windows
-    window.addEventListener("storage", updateCounts);
-
-    return () => {
-      window.removeEventListener("storage", updateCounts);
-    };
+    setTotalProjects(projects.length);
+    setTotalCertificates(certificates.length);
+    setYearExperience(0.5);
   }, []);
 
   // AOS initialization
