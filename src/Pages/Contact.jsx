@@ -63,7 +63,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="translate-x-[5%]">
+    <div className="mx-auto w-full md:pl-[6%]" id="Contact"> {/* ✅ ID moved here */}
       <div className="text-center lg:mt-[5%] mt-10 mb-2 sm:px-0 px-[5%]">
         <h2
           data-aos="fade-down"
@@ -80,10 +80,9 @@ const ContactPage = () => {
           Got a question? Send me a message, and I'll get back to you soon.
         </p>
       </div>
-  
-      <div className="py-10 flex items-center justify-center px-[5%] md:px-0" id="Contact">
+
+      <div className="py-10 flex items-center justify-center px-[5%] md:px-0">
         <div className="container px-[1%] flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-stretch gap-12">
-          
           {/* Get in Touch Section */}
           <div
             data-aos="fade-right"
@@ -93,8 +92,10 @@ const ContactPage = () => {
             <h2 className="text-4xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
               Get in Touch
             </h2>
-            <p className="text-gray-400">Have something to discuss? Send me a message and let's talk.</p>
-  
+            <p className="text-gray-400">
+              Have something to discuss? Send me a message and let's talk.
+            </p>
+
             <form
               action="https://formsubmit.co/shindepraful731@gmail.com"
               method="POST"
@@ -103,7 +104,7 @@ const ContactPage = () => {
             >
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
-  
+
               {/* Name Field */}
               <div className="relative">
                 <User className="absolute left-4 top-4 w-5 h-5 text-gray-400" />
@@ -118,8 +119,8 @@ const ContactPage = () => {
                   required
                 />
               </div>
-  
-              {/* Mobile Number Field */}
+
+              {/* Phone Field */}
               <div className="relative">
                 <Phone className="absolute left-4 top-4 w-5 h-5 text-gray-400" />
                 <input
@@ -133,7 +134,7 @@ const ContactPage = () => {
                   required
                 />
               </div>
-  
+
               {/* Message Field */}
               <div className="relative">
                 <textarea
@@ -147,7 +148,7 @@ const ContactPage = () => {
                   required
                 />
               </div>
-  
+
               {/* Submit Button */}
               <button
                 type="submit"
@@ -159,7 +160,7 @@ const ContactPage = () => {
               </button>
             </form>
           </div>
-  
+
           {/* Connect with Me Section */}
           <div
             data-aos="fade-left"
@@ -170,17 +171,18 @@ const ContactPage = () => {
               <h2 className="text-4xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
                 Connect with Me
               </h2>
-              <p className="text-gray-400">Follow me on social media and stay updated.</p>
+              <p className="text-gray-400">
+                Follow me on social media and stay updated.
+              </p>
               <div className="mt-6 flex justify-center space-x-6">
                 <SocialLinks />
               </div>
             </div>
           </div>
-  
         </div>
       </div>
     </div>
   );
-};  
+};
 
 export default ContactPage;

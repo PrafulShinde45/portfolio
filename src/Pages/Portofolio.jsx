@@ -158,7 +158,7 @@ export default function FullWidthTabs() {
 
 
         <TabPanel value={value} index={1}>
-  <div className="flex flex-wrap justify-center gap-6 p-4">
+  <div id="Certificates" className="flex flex-wrap justify-center gap-6 p-4">
     {certificates.map((cert) => (
       <div key={cert.id} className="bg-gray-900 rounded-lg p-3 shadow-md">
         {/* Certificate Image */}

@@ -176,7 +176,7 @@ const Home = () => {
   
   return (
     <div className="min-h-screen w-full bg-[#030014] overflow-hidden" id="Home">
-      <div className="translate-x-[5%]">
+      <div className="mx-auto w-full md:pl-[6%]">
     
       <div
         className={`relative z-10 transition-all duration-1000 ${
@@ -300,3 +300,4 @@ const Home = () => {
 };
 
 export default memo(Home);
+ 
