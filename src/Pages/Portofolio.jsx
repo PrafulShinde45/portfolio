@@ -63,6 +63,19 @@ export default function FullWidthTabs() {
     onSwipedRight: () => setValue((prev) => Math.max(prev - 1, 0)),
   });
 
+  // Listen for custom event to switch to certificates tab
+  useEffect(() => {
+    const handleSwitchToCertificates = () => {
+      setValue(1); // Index 1 is the Certificates tab
+    };
+
+    window.addEventListener('switchToCertificates', handleSwitchToCertificates);
+    
+    return () => {
+      window.removeEventListener('switchToCertificates', handleSwitchToCertificates);
+    };
+  }, []);
+
   return (
     <div {...handlers} className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden" id="Portfolio">
       <Box sx={{ width: "100%" }}>
