@@ -179,7 +179,18 @@ const AboutPage = () => {
 
   // Click handler for stat cards
   const handleStatClick = (link) => {
-    if (link) {
+    if (link === "#Certificates") {
+      // First scroll to Portfolio section
+      const portfolioSection = document.querySelector("#Portfolio");
+      if (portfolioSection) {
+        portfolioSection.scrollIntoView({ behavior: "smooth" });
+        // Wait a bit for scroll to complete, then trigger certificate tab
+        setTimeout(() => {
+          // Dispatch a custom event to switch to certificates tab
+          window.dispatchEvent(new CustomEvent('switchToCertificates'));
+        }, 500);
+      }
+    } else if (link) {
       const section = document.querySelector(link);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
