@@ -93,8 +93,8 @@ const SocialLink = memo(({ icon: Icon, link }) => (
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ["Computer Science Student", "Tech Enthusiast"];
-const TECH_STACK = ["React", "Javascript", "Node.js", "Tailwind"];
+const WORDS = ["Software Developer", "Tech Enthusiast"];
+const TECH_STACK = ["React", "Javascript", "Node.js", "Next.js"];
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/PrafulShinde45" },
   { icon: Linkedin, link: "https://www.linkedin.com/in/praful-shinde-a725aa293/" },
@@ -213,8 +213,7 @@ const Home = () => {
                   data-aos="fade-up"
                   data-aos-delay="1000"
                 >
-                  Full Stack Developer skilled in React.js, Node.js, Express.js, MongoDB, Next.js,  JavaScript, TypeScript, and
-                  AWS, with strong foundation in Java, Spring Boot, Firebase, and SQL databases.
+                  Full Stack Developer | React.js, Node.js, Express.js, MongoDB, Next.js, JavaScript, TypeScript, AWS | Skilled in DevOps & CI/CD, Firebase, and SQL Databases
                 </p>
 
                 {/* Tech Stack */}
@@ -235,7 +234,7 @@ const Home = () => {
                   data-aos-delay="1400"
                 >
                   <CTAButton
-                    href="#Portofolio"
+                    href="#Portfolio"
                     text="Projects"
                     icon={ExternalLink}
                   />

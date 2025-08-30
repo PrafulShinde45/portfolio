@@ -4,6 +4,7 @@ export const projects = [
     description: "Created a decentralized crowdfunding platform allowing users to raise and contribute funds securely using blockchain.",
     Img: "cp.jpg",
     Link: "https://github.com/PrafulShinde45/Crowdfunding-Platform",
+    liveLink: "https://crowdfunding-platform-orpin.vercel.app/",
     id: 5,
   },
   {
@@ -11,6 +12,7 @@ export const projects = [
     description: "Developed a real-time chat application using WebSockets and Firebase for instant messaging between users.",
     Img: "RA.jpg",
     Link: "https://github.com/PrafulShinde45/Real-Time-Chat-Application",
+    liveLink: "https://realtime-chat-app-iq1x.onrender.com/login",
     id: 4,
   },
   {
@@ -60,6 +62,7 @@ export const projects = [
     description: "Developed a simple and interactive TODO list application using React.js to manage daily tasks efficiently.",
     Img: "TD.png",
     Link: "https://github.com/PrafulShinde45/React-ToDo",
+    liveLink: "https://react-to-do-navy.vercel.app/",
     id: 9
   }
 ];
@@ -77,6 +80,30 @@ export const certificates = [
     Link: "/certificates/MERN.jpeg",
     name: "Full Stack Web Development",
     description: "Issued by Prepinsta",
+    id: 1,
+  },
+
+  {
+    Img: "/certificates/MERN Youth Skill Program.jpg",
+    Link: "/certificates/MERN.jpeg",
+    name: "MERN Stack Development",
+    description: "Issued by Ethnus In Association with Infosys Foundation",
+    id: 1,
+  },
+
+  {
+    Img: "/certificates/TCS Codevita Rank Certificate.jpg",
+    Link: "/certificates/MERN.jpeg",
+    name: "TCS Codevita Rank Certificate",
+    description: "Issued by TCS",
+    id: 1,
+  },
+
+  {
+    Img: "/certificates/GCDA.jpg",
+    Link: "/certificates/GCDA.jpg",
+    name: "Goodle Data Analytics",
+    description: "Issued by Coursera",
     id: 1,
   },
 ]; 

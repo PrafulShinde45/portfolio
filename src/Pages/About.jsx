@@ -10,6 +10,7 @@ import {
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { projects, certificates } from '../data';
+import ExperienceModal from '../components/ExperienceModal';
 
 // Memoized Components
 const Header = memo(() => (
@@ -120,6 +121,7 @@ const AboutPage = () => {
   const [totalProjects, setTotalProjects] = useState(0);
   const [totalCertificates, setTotalCertificates] = useState(0);
   const [YearExperience, setYearExperience] = useState(0);
+  const [isExperienceModalOpen, setIsExperienceModalOpen] = useState(false);
 
   // Update counts on mount and when localStorage changes
   useEffect(() => {
@@ -173,13 +175,35 @@ const AboutPage = () => {
       label: "Years of Experience",
       description: "Continuous learning journey",
       animation: "fade-left",
-      link: null,
+      link: "experience",
     },
   ];
 
   // Click handler for stat cards
   const handleStatClick = (link) => {
-    if (link) {
+    if (link === "experience") {
+      setIsExperienceModalOpen(true);
+    } else if (link === "#Certificates") {
+      // Navigate to Portfolio page and switch to Certificates tab
+      const portfolioSection = document.querySelector("#Portfolio");
+      if (portfolioSection) {
+        portfolioSection.scrollIntoView({ behavior: "smooth" });
+        // Dispatch a custom event to switch to certificates tab
+        setTimeout(() => {
+          window.dispatchEvent(new CustomEvent('switchToTab', { detail: { tabIndex: 1 } }));
+        }, 100);
+      }
+    } else if (link === "#Portfolio") {
+      // Navigate to Portfolio page and switch to Projects tab
+      const portfolioSection = document.querySelector("#Portfolio");
+      if (portfolioSection) {
+        portfolioSection.scrollIntoView({ behavior: "smooth" });
+        // Dispatch a custom event to switch to projects tab
+        setTimeout(() => {
+          window.dispatchEvent(new CustomEvent('switchToTab', { detail: { tabIndex: 0 } }));
+        }, 100);
+      }
+    } else if (link) {
       const section = document.querySelector(link);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
@@ -189,7 +213,7 @@ const AboutPage = () => {
 
   return (
     <div
-      className="h-auto pb-[10%] text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] mt-10 sm-mt-0"
+      className="h-auto pb-[8%] text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] mt-10 sm-mt-0"
       id="About"
     >
       <Header />
@@ -248,21 +272,23 @@ const AboutPage = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-          {statsData.map((stat) =>
-            stat.link ? (
-              <div
-                key={stat.label}
-                className="cursor-pointer"
-                onClick={() => handleStatClick(stat.link)}
-              >
-                <StatCard {...stat} />
-              </div>
-            ) : (
-              <StatCard key={stat.label} {...stat} />
-            )
-          )}
+          {statsData.map((stat) => (
+            <div
+              key={stat.label}
+              className="cursor-pointer"
+              onClick={() => handleStatClick(stat.link)}
+            >
+              <StatCard {...stat} />
+            </div>
+          ))}
         </div>
       </div>
+
+      {/* Experience Modal */}
+      <ExperienceModal 
+        isOpen={isExperienceModalOpen} 
+        onClose={() => setIsExperienceModalOpen(false)} 
+      />
 
       <style jsx>{`
         @keyframes float {
